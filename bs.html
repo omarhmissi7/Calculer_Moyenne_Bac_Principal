@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bac Science</title>
+</head>
+<style>
+    input{
+        transition: 0.35s;
+        margin-top: 1px;
+        margin-bottom: 20px;
+        height: 45px;
+        border: 2.5px solid blueviolet;
+        border-radius: 40px;
+        width: 185px;
+        height: 50px;
+        text-align: center;
+        font-weight: 900;
+        
+        
+        background: none;
+        color: white;
+        box-shadow: 2px 5px 5px blueviolet;
+    }
+    #divv{
+        height: 40px;
+        width: 200px;
+        
+        border-radius: 7px;
+        border: 3px solid blueviolet;
+        box-shadow: 3px 3px 3px blueviolet;
+        color: white;
+        text-align: center;
+        font-weight: 900;
+        margin-top: 0;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        font-size: 30px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    #ar{margin-right: 100px;}
+    #math{margin-right: 100px;}
+    #ph{margin-right: 100px;}
+    #philo{margin-right: 100px;}
+    #option{margin-right: 100px;}
+    input:focus{
+        transform: scaleX(1.07);
+        border-radius: 25px;
+        outline-color: #2ecc71;
+        box-shadow: 4px 4px 4px #2ecc71;
+    }
+    body{
+        background-color: black;
+    }
+    h1{
+        color: white;
+        font-weight: lighter;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    fieldset{margin-top: 100px;
+        width: 530px;
+        height: 500px;
+        border-radius: 20px;
+        margin-bottom: 65px;
+        box-shadow: 5px 5px 5px 5px blueviolet;
+    }
+    legend{color: #2ecc71;
+        font-weight: 900;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: xx-large;
+    }
+    div{margin-top: 40px;}
+    button{
+        padding: 20px 40px 20px 40px;
+        color: #2ecc71;
+        background: none;
+        border: 3px solid #2ecc71;
+        font-weight: 1000;
+        border-radius: 40px;
+        transition: 0.3s;
+        margin-bottom: 35px;
+        
+    }
+    button:hover{
+                background-color: #2ecc71;
+        color: rgb(255, 255, 255);
+        transform: scaleX(1.1);
+    }
+    button:active{
+        transform: scale(0.9);
+    }
+</style>
+    <body>
+    <center>
+        
+        
+        <fieldset>
+            <legend align="center">Calculer moyenne bac science</legend>
+            <div>
+                <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
+                <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
+                <input type="number" name="" id="math" max="20" min="0" placeholder="Math">
+                <input type="number" name="" id="sc" max="20" min="0" placeholder="Science"><br>
+                <input type="number" name="" id="ph" max="20" min="0" placeholder="Physique">
+                <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais"><br>
+                <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie">
+                <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport"><br>
+                <input type="number" name="" id="option" max="20" min="0" placeholder="Option">
+                <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
+
+            </div>
+        </fieldset>
+        <button onclick="calcbs()">
+            CALCULER MOYEN
+        </button><br>
+        <div id="divv">
+            00.00
+        </div>
+        
+     </center>
+</body>
+<script>
+    
+    
+        function calcbs(){
+
+            let ar = parseFloat(document.getElementById("ar").value) || 0;
+            let fr = parseFloat(document.getElementById("fr").value) || 0;
+            let math = parseFloat(document.getElementById("math").value) || 0;
+            let sc = parseFloat(document.getElementById("sc").value) || 0;
+            let ph = parseFloat(document.getElementById("ph").value) || 0;
+            let en = parseFloat(document.getElementById("en").value) || 0;
+            let philo = parseFloat(document.getElementById("philo").value) || 0;
+            let sport = parseFloat(document.getElementById("sport").value) || 0;
+            let option = parseFloat(document.getElementById("option").value) || 0;
+            let info = parseFloat(document.getElementById("info").value) || 0;
+
+            let moy = (ar + fr + en + math*3 + sc*4 + ph*4 + philo + sport + option + info) / 18;
+            let div = document.getElementById("divv");
+            div.innerHTML= moy.toFixed(2);
+            
+        }
+
+
+    
+
+
+
+</script>
+</html>
