@@ -6,33 +6,15 @@
     <title>Document</title>
 </head>
 <style>
-    button{
-        width: 240px;
-        height: 240px;
-        
-        color: blueviolet;
-        background-color: #fff;
-        border: none;
-        border-radius: 180px;
-        font-weight: 900;
-        
-        transition: 0.4s;
-        box-shadow: 5px 5px 5px 5px blue;
-        font-size: larger;
-        font-size: 35px;
-        align-items: center;
-        margin: 15px;
-        
-        
-    }
+    
     h1{
         color: #fff;
-        font-weight: 900;
-        letter-spacing: 5px;
+        font-weight: 600;
+        letter-spacing: 2px;
         font-size: 40px;
-        text-transform: capitalize;
-        font-style: italic;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        text-transform: uppercase;
+        font-family: "serif";
+        text-decoration: underline;
     }
         body{
         background-color: black;
@@ -43,16 +25,8 @@
         
         
     }
-    button:hover{
-        color: white;
-        background: linear-gradient(hotpink,blueviolet,blue);
-        transform: scale(0.94);
-
-        
-        border: none;
-        
-        
-    }
+    
+    
     fieldset{margin-top: 100px;
         border: 4px solid white;
         width: 600px;
@@ -62,56 +36,153 @@
         display:inline;
         
     }
-    legend{color: white;
+    legend{
+        font-family: arial;
+        color: #fff;
         font-weight: 800;
         font-size: xx-large;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
-    div{margin-top: 150px;
-    height: 240px;
+    div{
+        margin-top: 120px;
+        height: 240px;
 }
 
-    .m{
-      
-     }
-    .I{
-        font-size: 35px;
-        padding-left: 45px;
-        
-    }
+    
+    
     p{
         width: 150px;
         text-align: center;
         
     }
+    button {
+            position: relative;
+            font-size: 25px;
+            width: 230px;
+            height: 230px;
+            margin: 15px;
+            border-radius: 150px;
+            display: inline-block;
+            font-weight: 900;
+            color: white;
+            background: #020617;
+            overflow: hidden;
+            transition: 800ms;
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            animation: fadeUp 1s ease forwards;
+            border: none;
+        }
+
+        
+        .I{
+            padding-left: 35px;
+        }
+
+
+        button::before {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border-radius: 150px;
+            background: linear-gradient(270deg, #000000, #2f2fad, #2949d7,hotpink);
+            background-size: 400% 400%;
+            z-index: -3;
+            border: none;
+            animation: borderMove 9s linear infinite;
+        }
+
+
+        button::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            background: #020617;
+            border-radius: 150px;
+            z-index: -1;
+            border: none;
+        }
+        button::after:hover{
+            transform: scale(1.1) translateY(10px);
+        }
+        button:active{
+            transform: scale(1.1);
+        }
+
+
+        /* Hover */
+
+
+        /* Animation */
+        @keyframes borderMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 400% 50%;
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Delay effect */
+        button:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        button:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        button:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        button:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        button:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        button:nth-child(6) {
+            animation-delay: 1.2s;
+        }    
+
     
 
 </style>
 <body>   
     <center>
         <h1>
-            <---------Calculer moyenne bac principal----------->
+            Calculer moyenne bac principal
         </h1>  
         
             <legend align="center">Selectionner votre section</legend>
             <div>
                 <a href="bm.html">
-                <button class="m">BAC MATHS</button>
+                <button class="m"><span>BAC</span><br> MATHS</button>
             </a>
             <a href="bs.html">
-                <button>BAC SCIENCE</button>
+                <button><span>BAC</span><br> SCIENCE</button>
             </a>
             <a href="bi.html">
-                <button class="I"><p align="center">BAC INFO</p></button>
+                <button class="I"><p align="center"><span>BAC</span><br> INFO</p></button>
             </a>
             <a href="be.html">
-                <button>BAC ECONOMIE</button>
+                <button><span>BAC</span><br> ECONOMIE</button>
             </a>
             <a href="bt.html">
-                <button class="t">BAC TECHNIQUE</button>
+                <button class="t"><span>BAC</span><br> TECHNIQUE</button>
             </a>
             <a href="bl.html">
-                <button>BAC LETTRE</button>
+                <button><span>BAC</span><br> LETTRE</button>
             </a>
             </div>
         

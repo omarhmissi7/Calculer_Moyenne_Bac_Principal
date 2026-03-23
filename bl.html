@@ -5,102 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bac math</title>
 </head>
+<link rel="stylesheet" href="style.css">
 <style>
-    input{
-        transition: 0.35s;
-        margin-top: 1px;
-        height: 50px;
-        border: 2.5px solid blueviolet;
-        border-radius: 40px;
-        width: 185px;
-        text-align: center;
-        font-weight: 900;
-        margin-bottom: 20px;
-        background: none;
-        color: white;
-        box-shadow: 2px 5px 5px blueviolet;
+    #philo,#option{
+        margin-right: 10px;
+        margin-left: 60px;
     }
-    #ar{margin-right: 100px;}
-    #hisgeo{margin-right: 100px;}
-    #ph{margin-right: 100px;}
-    #en{margin-right: 100px;}
-    #sport{margin-right: 100px;}
-    input:focus{
-        transform: scaleX(1.07);
-        border-radius: 25px;
-        outline-color: #2ecc71;
-        box-shadow: 4px 4px 4px #2ecc71;
-    }
-    body{
-        background-color: black;
-    }
-    h1{
-        color: white;
-        font-weight: lighter;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    fieldset{margin-top: 100px;
-        width: 530px;
-        height: 500px;
-        border-radius: 20px;
-        margin-bottom: 65px;
-        box-shadow: 2px 5px 5px  white;
-    }
-    legend{color: #2ecc71;
-        font-weight: 900;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: xx-large;
-    }
-    div{margin-top: 40px;}
-    button{
-                padding: 20px 40px 20px 40px;
-        color: #2ecc71;
-        background: none;
-        border: 3px solid #2ecc71;
-        font-weight: 1000;
-        border-radius: 40px;
-        transition: 0.3s;
-        margin-bottom: 35px;
-    }
-    button:hover{
-                background-color: #2ecc71;
-        color: rgb(255, 255, 255);
-        transform: scaleX(1.1);
-    }
-    button:active{
-        transform: scale(0.9);
-    }
-    #divv{
-        height: 40px;
-        width: 200px;
-        
-        border-radius: 7px;
-        border: 3px solid blueviolet;
-        box-shadow: 3px 3px 3px blueviolet;
-        color: white;
-        text-align: center;
-        font-weight: 900;
-        margin-top: 0;
-        padding-top: 17px;
-        padding-bottom: 17px;
-        font-size: 30px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    #en,#sport{
+        margin-right: 0;
     }
     
 
 </style>
     <body>
     <center>
+            <legend align="center">Calculer moyenne bac Lettres</legend>
         
         
         <fieldset>
-            <legend align="center">Calculer moyenne bac Lettres</legend>
             <div>
                 <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
                 <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
-                <input type="number" name="" id="hisgeo" max="20" min="0" placeholder="his-geo">
+                <input type="number" name="" id="hisgeo" max="20" min="0" placeholder="his-geo" style="margin-right: 50px;">
                 <input type="number" name="" id="isl" max="20" min="0" placeholder="p. islamique"><br>
-                
                 <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais">
                 <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie"><br>
                 <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport">
@@ -111,7 +38,7 @@
         </fieldset>
         <button onclick="calcbm()">
             CALCULER MOYEN
-        </button>
+        </button><br><br><br><br>
         <div id="divv">
             00.00
         </div>
