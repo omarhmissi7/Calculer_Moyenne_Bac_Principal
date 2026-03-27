@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,69 +8,89 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <style>
-    img{
+    img {
         height: 150px;
         width: 150px;
     }
 </style>
-    <body>
-    <center>
-        
-            <legend align="center">Calculer moyenne bac Technique</legend>
-            <img src="technical-support.png" alt="">
-        
-        <fieldset style="height: 700px;">
-            <div>
-                <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
-                <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
-                <input type="number" name="" id="math" max="20" min="0" placeholder="Math">
-                <input type="number" name="" id="tech" max="20" min="0" placeholder="Technologie"><br>
-                <input type="number" name="" id="ph" max="20" min="0" placeholder="Physique">
-                <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais"><br>
-                <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie">
-                <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport"><br>
-                <input type="number" name="" id="option" max="20" min="0" placeholder="Option">
-                <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
-                <input type="number" name="" id="elec" max="20" min="0" placeholder="Electrique"><br>
 
-            </div>
-        </fieldset>
+<body>
+    <center>
+
+        <legend align="center">Calculer moyenne bac Technique</legend>
+        <img src="technical-support.png" alt="">
+
+
+        <div>
+            <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
+            <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
+            <input type="number" name="" id="math" max="20" min="0" placeholder="Math">
+            <input type="number" name="" id="tech" max="20" min="0" placeholder="Technologie"><br>
+            <input type="number" name="" id="ph" max="20" min="0" placeholder="Physique">
+            <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais"><br>
+            <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie">
+            <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport"><br>
+            <input type="number" name="" id="option" max="20" min="0" placeholder="Option">
+            <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
+            <input type="number" name="" id="elec" max="20" min="0" placeholder="Electrique"><br>
+
+        </div>
+
         <button onclick="calcbt()">
             CALCULER MOYEN
         </button><br><br><br><br>
-        <div id="divv">
-            00.00
+        <div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+            ">Votre Moyenne Est : </span><br><br>
+            <div id="divv">
+                00.00
+            </div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+                text-transform: capitalize;
+            ">votre score est : </span><br><br>
+            <div id="score">
+
+            </div>
         </div>
-        
-     </center>
+
+    </center>
 </body>
 <script>
-    
-    
-        function calcbt(){
-
-            let ar = parseFloat(document.getElementById("ar").value) || 0;
-            let fr = parseFloat(document.getElementById("fr").value) || 0;
-            let math = parseFloat(document.getElementById("math").value) || 0;
-            let tech = parseFloat(document.getElementById("tech").value) || 0;
-            let ph = parseFloat(document.getElementById("ph").value) || 0;
-            let en = parseFloat(document.getElementById("en").value) || 0;
-            let philo = parseFloat(document.getElementById("philo").value) || 0;
-            let sport = parseFloat(document.getElementById("sport").value) || 0;
-            let option = parseFloat(document.getElementById("option").value) || 0;
-            let info = parseFloat(document.getElementById("info").value) || 0;
-            let elec = parseFloat(document.getElementById("elec").value) || 0;
-
-            let moy = (elec*4 + ar + fr + en + math*4 + tech*4 + ph*4 + philo + sport + option + info) / 23;
-            let div = document.getElementById("divv");
-            div.innerHTML= moy.toFixed(2);
-            
-        }
 
 
-    
+    function calcbt() {
+
+        let ar = parseFloat(document.getElementById("ar").value) || 0;
+        let fr = parseFloat(document.getElementById("fr").value) || 0;
+        let math = parseFloat(document.getElementById("math").value) || 0;
+        let tech = parseFloat(document.getElementById("tech").value) || 0;
+        let ph = parseFloat(document.getElementById("ph").value) || 0;
+        let en = parseFloat(document.getElementById("en").value) || 0;
+        let philo = parseFloat(document.getElementById("philo").value) || 0;
+        let sport = parseFloat(document.getElementById("sport").value) || 0;
+        let option = parseFloat(document.getElementById("option").value) || 0;
+        let info = parseFloat(document.getElementById("info").value) || 0;
+        let elec = parseFloat(document.getElementById("elec").value) || 0;
+
+        let moy = (elec * 4 + ar + fr*1.5 + en*1.5 + math * 3 + tech * 4 + ph * 4 + philo + sport + option + info) / 23;
+        let score = moy*4 + (elec + tech)*0.5*1.5 + math*1.5 + ph + fr + en;
+        let div = document.getElementById("divv");
+        div.innerHTML = moy.toFixed(2);
+        document.getElementById("score").innerHTML = score.toFixed(2);
+
+    }
+
+
+
 
 
 
 </script>
+
 </html>

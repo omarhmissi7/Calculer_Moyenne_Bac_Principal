@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,69 +8,107 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <style>
-    img{
+    img {
         width: 150px;
         height: 150px;
     }
 </style>
-    <body>
+
+<body>
     <center>
-        
+
         <legend align="center">Calculer moyenne bac economie</legend>
         <img src="economy.png" alt="">
-        
-        <fieldset  style="height: 700px;">
-            <div>
-                <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
-                <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
-                <input type="number" name="" id="math" max="20" min="0" placeholder="Math">
-                <input type="number" name="" id="economie" max="20" min="0" placeholder="Economie"><br>
-                <input type="number" name="" id="gestion" max="20" min="0" placeholder="Gestion">
-                <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais"><br>
-                <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie">
-                <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport"><br>
-                <input type="number" name="" id="option" max="20" min="0" placeholder="Option">
-                <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
-                <input type="number" name="" id="hisgeo" max="20" min="0" placeholder="His-Geo"><br>
 
-            </div>
-        </fieldset>
+
+        <div id="cont">
+
+
+
+            <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe" >
+
+
+
+
+            <input type="number" name="" id="fr" max="20" min="0" placeholder="Français" ><br>
+
+            <input type="number" name="" id="math" max="20" min="0" placeholder="Math">
+
+            <input type="number" name="" id="economie" max="20" min="0" placeholder="Economie" ><br>
+
+            <input type="number" name="" id="gestion" max="20" min="0" placeholder="Gestion">
+
+            <input type="number" name="" id="en" max="20" min="0" placeholder="Anglais"><br>
+
+            <input type="number" name="" id="philo" max="20" min="0" placeholder="Philosophie" >
+
+            <input type="number" name="" id="sport" max="20" min="0" placeholder="Sport" ><br>
+
+            <input type="number" name="" id="option" max="20" min="0" placeholder="Option" >
+
+            <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
+            <input type="number" name="" id="hisgeo" max="20" min="0" placeholder="His-Geo" >
+            
+        </div>
+
         <button onclick="calcbe()">
             CALCULER MOYEN
         </button><br><br><br><br>
-        <div id="divv">
-            00.00
+        <div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+            ">Votre Moyenne Est : </span><br><br>
+            <div id="divv">
+                00.00
+            </div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+                text-transform: capitalize;
+            ">votre score est : </span><br><br>
+            <div id="score">
+
+            </div>
         </div>
-        
-     </center>
+
+    </center>
 </body>
 <script>
-    
-    
-        function calcbe(){
-
-            let ar = parseFloat(document.getElementById("ar").value) || 0;
-            let fr = parseFloat(document.getElementById("fr").value) || 0;
-            let math = parseFloat(document.getElementById("math").value) || 0;
-            let economie = parseFloat(document.getElementById("economie").value) || 0;
-            let gestion = parseFloat(document.getElementById("gestion").value) || 0;
-            let en = parseFloat(document.getElementById("en").value) || 0;
-            let philo = parseFloat(document.getElementById("philo").value) || 0;
-            let sport = parseFloat(document.getElementById("sport").value) || 0;
-            let option = parseFloat(document.getElementById("option").value) || 0;
-            let info = parseFloat(document.getElementById("info").value) || 0;
-            let hisgeo = parseFloat(document.getElementById("hisgeo").value) || 0;
-
-            let moy = (ar + fr + en + math*2.5 + economie*4 + gestion*4 + philo + sport + option + info + hisgeo * 1.5 ) / 19;
-            let div = document.getElementById("divv");
-            div.innerHTML= moy.toFixed(2);
-            
-        }
 
 
-    
+    function calcbe() {
+
+        let ar = parseFloat(document.getElementById("ar").value) || 0;
+        let fr = parseFloat(document.getElementById("fr").value) || 0;
+        let math = parseFloat(document.getElementById("math").value) || 0;
+        let economie = parseFloat(document.getElementById("economie").value) || 0;
+        let gestion = parseFloat(document.getElementById("gestion").value) || 0;
+        let en = parseFloat(document.getElementById("en").value) || 0;
+        let philo = parseFloat(document.getElementById("philo").value) || 0;
+        let sport = parseFloat(document.getElementById("sport").value) || 0;
+        let option = parseFloat(document.getElementById("option").value) || 0;
+        let info = parseFloat(document.getElementById("info").value) || 0;
+        let hisgeo = parseFloat(document.getElementById("hisgeo").value) || 0;
+
+        let moy = (ar * 1 + fr * 1 + en * 1 + math * 2 + economie * 3 + gestion * 3 + philo * 1 + sport + option + info * 0.5 + hisgeo * 2) / 16.5;
+        let score_ = moy * 4 + (economie * 1.5) + gestion * 1.5 + math * 0.5 + hisgeo * 0.5 + fr + en
+        let div = document.getElementById("divv");
+        let score = document.getElementById("score");
+
+        div.innerHTML = moy.toFixed(2);
+        score.innerHTML = score_.toFixed(2)
+
+
+    }
+
+
+
 
 
 
 </script>
+
 </html>

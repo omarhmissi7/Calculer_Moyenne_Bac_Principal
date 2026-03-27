@@ -20,7 +20,7 @@
         <legend align="center">Calculer moyenne bac maths</legend>
         <img src="math.png" alt="">
 
-        <fieldset>
+        
             <div>
                 <input type="number" name="" id="ar" max="20" min="0" placeholder="Arabe">
                 <input type="number" name="" id="fr" max="20" min="0" placeholder="Français"><br>
@@ -34,12 +34,28 @@
                 <input type="number" name="" id="info" max="20" min="0" placeholder="Informatique"><br>
 
             </div>
-        </fieldset>
+     
         <button onclick="calcbm()">
             CALCULER MOYEN
         </button><br><br><br><br>
-        <div id="divv">
-            00.00
+        <div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+            ">Votre Moyenne Est : </span><br><br>
+            <div id="divv">
+                00.00
+            </div>
+            <span style="color: white;
+                font-weight: 900;
+                font-family: 'arial black';
+                font-size: 25px;
+                text-transform: capitalize;
+            ">votre score est : </span><br><br>
+            <div id="score">
+
+            </div>
         </div>
 
     </center>
@@ -60,9 +76,11 @@
         let option = parseFloat(document.getElementById("option").value) || 0;
         let info = parseFloat(document.getElementById("info").value) || 0;
 
-        let moy = (ar + fr + en + math * 4 + sc + ph * 4 + philo + sport + option + info) / 16;
+        let moy = (ar + fr*1.5 + en*1.5 + math * 4 + sc*2 + ph * 4 + philo + sport + option + info) / 18;
+        let score = 4*moy + math*2 + 1.5*ph + sc*0.5 + fr + sc;
         let div = document.getElementById("divv");
         div.innerHTML = moy.toFixed(2);
+        document.getElementById("score").innerHTML = score.toFixed(2);
 
     }
 
