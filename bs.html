@@ -74,8 +74,13 @@
             let sport = parseFloat(document.getElementById("sport").value) || 0;
             let option = parseFloat(document.getElementById("option").value) || 0;
             let info = parseFloat(document.getElementById("info").value) || 0;
-
-            let moy = (ar + fr + en + math*3 + sc*4 + ph*4 + philo + sport + option + info) / 18;
+            let moy;
+            if (option > 10) {
+                let new_ = option-10;
+                moy = (ar + fr + en + math*3 + sc*4 + ph*4 + philo + sport + new_ + info) / 17;
+            } else {
+                moy = (ar + fr + en + math*3 + sc*4 + ph*4 + philo + sport + info) / 17;
+            }
             let score_ = moy*4 + math + ph*1.5 + sc*1.5 + fr + en;
             let div = document.getElementById("divv");
             div.innerHTML= moy.toFixed(2);

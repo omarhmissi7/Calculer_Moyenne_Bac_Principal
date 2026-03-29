@@ -79,8 +79,14 @@
         let option = parseFloat(document.getElementById("option").value) || 0;
         let info = parseFloat(document.getElementById("info").value) || 0;
         let elec = parseFloat(document.getElementById("elec").value) || 0;
-
-        let moy = (elec * 4 + ar + fr*1.5 + en*1.5 + math * 3 + tech * 4 + ph * 4 + philo + sport + option + info) / 23;
+        let moy;
+        if (option > 10) {
+            let new_ = option - 10;
+            moy = (elec * 4 + ar + fr*1.5 + en*1.5 + math * 3 + tech * 4 + ph * 4 + philo + sport + new_ + info) / 22;
+        } else {
+            moy = (elec * 4 + ar + fr*1.5 + en*1.5 + math * 3 + tech * 4 + ph * 4 + philo + sport + info) / 22;
+        }
+        
         let score = moy*4 + (elec + tech)*0.5*1.5 + math*1.5 + ph + fr + en;
         let div = document.getElementById("divv");
         div.innerHTML = moy.toFixed(2);

@@ -74,10 +74,17 @@
             let sport = parseFloat(document.getElementById("sport").value) || 0;
             let option = parseFloat(document.getElementById("option").value) || 0;
             let prog = parseFloat(document.getElementById("prog").value) || 0;
+            let moy;
+            if (option > 10){
+                let new_ = option - 10;
+                moy = (ar + fr*1.5 + en*1.5 + math*3 + sti*3 + ph*3 + philo + sport + new_ + prog*3) / 18;
 
-            let moy = (ar + fr*1.5 + en*1.5 + math*3 + sti*3 + ph*3 + philo + sport + option + prog*3) / 19;
+            }else{
+                moy = (ar + fr*1.5 + en*1.5 + math*3 + sti*3 + ph*3 + philo + sport + prog*3) / 18;
+            }
+            
             let score_ = moy*4 + 1.5*(prog+math) + ph*0.5 + 0.5*sti + fr + en;
-
+            
 
             let div = document.getElementById("divv");
             let score = document.getElementById("score");
